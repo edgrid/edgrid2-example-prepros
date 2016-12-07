@@ -1,4 +1,7 @@
 # EDgrid Example Prepros
+
+![EDGrid Prepros](https://escuela.digital/sites/default/files/images/edgrid-prepros.png)
+
 Basic example of using [EDgrid](https://github.com/escueladigital/EDgrid) width [Prepros](https://prepros.io).
 
 This example has two versions:
