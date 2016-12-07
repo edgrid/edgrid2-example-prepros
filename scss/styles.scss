@@ -1,0 +1,106 @@
+$cssCore: false;
+$devMode: false;
+@import "ed-grid/ed-grid";
+
+// colors
+$black: #222;
+$white: #eee;
+$bp-menu: l;
+$grey: #ccc;
+
+
+// header
+.main-header {
+  background : $black;
+}
+
+.logo {
+  display : block;
+  height : 35px;
+  margin : 7px 0;
+}
+
+// menu
+.main-menu {
+  @include edMenu($bp-menu);
+
+  &__item {
+    @include to($bp-menu) {
+      border-bottom : 1px solid rgba(#fff,.15);
+    }
+  }
+
+  &__link {
+    color: $white;
+    font-size : .95em;
+    display : block;
+
+    @include from($bp-menu) {
+      height : 49px;
+      line-height : 49px;
+
+      &:hover {
+        box-shadow: 0 -3px tomato inset;
+      }
+    }
+  }
+}
+
+.main-nav {
+  @include edNav(right,$bp-menu);
+  
+  @include to($bp-menu) {
+    margin-top : 49px;
+    align-self: stretch;
+    background : lighten($black,5);
+  }
+}
+
+.nav-toggle {
+  @include navToggle(15px,$white);
+  @include hideFrom($bp-menu);
+}
+
+
+// main
+main {
+  color: #555;
+  margin-top : 2em;
+}
+
+.main-title {
+  margin-top : 0;
+  font-size : 1.7em;
+}
+
+.main-content {
+  line-height : 1.5;
+  font-size : .95em;
+}
+
+.sidebar-block {
+  border : 1px solid $grey;
+  padding : 1em;
+  border-radius : .3em;
+
+  &__title {
+    margin : 0;
+    font-size : 1.2em;
+  }
+
+  a {
+    color: steelblue;
+  }
+}
+
+
+//footer 
+
+.main-footer {
+  @include stickyFooter;
+  background : $black;
+  color: $white;
+  text-align : center;
+  padding : 1em 0;
+  font-size : .9em;
+}
